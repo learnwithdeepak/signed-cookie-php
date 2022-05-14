@@ -1,6 +1,6 @@
 <?php
 function createSignedCookie($streamHostUrl, $resourceKey, $timeout){
-    $keyPairId = "APKAIWCOMK3FSRZUS4CQ"; // Key Pair
+    $keyPairId = "APKAJBP3D6S2IU5JK4LQ"; // Key Pair
     $expires = time() + $timeout; // Expire Time
     $url = $streamHostUrl . '/' . $resourceKey; // Service URL
     $ip=$_SERVER["REMOTE_ADDR"] . "\/24"; // IP
@@ -49,16 +49,16 @@ function createSignedCookie($streamHostUrl, $resourceKey, $timeout){
   <h2>Cookie Detailes </h2>
 </br>
     <?php
-    $signedCookieCustomPolicy = createSignedCookie('https://d3mijot0yweq40.cloudfront.net', 'live/bharat_hls/*', 300);
+    $signedCookieCustomPolicy = createSignedCookie('d1d34p8vz63oiq.cloudfront.net', '3ecf3de0-3c3f-4c4c-9f65-f2cd17d28a35/hls/360/*', 300);
     foreach ($signedCookieCustomPolicy as $name => $value) {
-        setcookie($name, $value, 0, "/", "d3mijot0yweq40.cloudfront.net", false, false);
+        setcookie($name, $value, 0, "/", "d1d34p8vz63oiq.cloudfront.net", false, false);
     }
     print_r($signedCookieCustomPolicy);
     ?>
 <h2> Testing Signed Cookie On HLS Stream</h2>
   <div id="player"></div>
   <script>
-    var player = new Clappr.Player({source: "https://d3mijot0yweq40.cloudfront.net/live/bharat_hls/chunklist_2.m3u8", autoPlay: true, parentId: "#player"});
+    var player = new Clappr.Player({source: "https://d1d34p8vz63oiq.cloudfront.net/3ecf3de0-3c3f-4c4c-9f65-f2cd17d28a35/hls/360/main.m3u8", autoPlay: true, parentId: "#player"});
   </script>
 </body>
 </html>
